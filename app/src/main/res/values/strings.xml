@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Music Player</string>
+    <string name="no_song_selected">Select a song from Library</string>
+    <string name="library_button">Library</string>
+    <string name="favorites_button">Favorites</string>
+    <string name="theme_dark">Theme: Dark</string>
+    <string name="theme_light">Theme: Light</string>
+    <string name="black_screen_button">Screen Off</string>
+    <string name="select_music_folder_title">Select Music Directory</string>
+    <string name="select_music_folder_message">Please grant access to your designated internal storage Music folder (/storage/emulated/0/Music). The application reads exclusively from this folder and operates 100% offline.</string>
+    <string name="select_folder_action">Select Music Folder</string>
+    <string name="section_playlists">Playlists</string>
+    <string name="section_songs">Songs</string>
+    <string name="create_playlist">+ New Playlist</string>
+    <string name="refresh_library">Refresh</string>
+    <string name="play_all">Play All</string>
+    <string name="play_next">Play Next</string>
+    <string name="add_to_queue">Add to Queue</string>
+    <string name="add_to_favorites">Add to Favorites</string>
+    <string name="add_to_playlist">Add to Playlist</string>
+    <string name="remove_from_queue">Remove from Queue</string>
+    <string name="rename_playlist">Rename Playlist</string>
+    <string name="delete_playlist">Delete Playlist</string>
+    <string name="remove_from_playlist">Remove from Playlist</string>
+    <string name="back_to_library">← Library</string>
+</resources>

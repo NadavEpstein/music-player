@@ -1,0 +1,44 @@
+name: Build POCO X7 Pro Offline Music Player APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+
+      - name: Run Unit Tests (Directory Depth, Hebrew/Unicode, Shuffle & Queue Engine)
+        run: gradle testDebugUnitTest --stacktrace
+
+      - name: Build Debug & Release APKs
+        run: gradle assembleDebug assembleRelease --stacktrace
+
+      - name: Upload Ready-to-Install Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: poco-x7-pro-offline-music-player-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload Unsigned Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: poco-x7-pro-offline-music-player-release-apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk

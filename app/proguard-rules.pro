@@ -1,0 +1,2 @@
+-keep class com.nadavepstein.musicplayer.model.** { *; }
+-dontwarn android.**
